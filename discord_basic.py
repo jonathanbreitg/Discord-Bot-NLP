@@ -2,6 +2,7 @@ import discord
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import logging
+import os
 import tensorflow as tf
 from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
@@ -64,4 +65,4 @@ async def on_message(message):
         await message.channel.send(response)
 
 
-client.run('NzY0MDU5OTA2MzA2MzQyOTIz.X4AwPQ.OmW6KGer6ilDz43pb00dP7RkCL4')
+client.run(os.environ['token_discord'])
