@@ -33,7 +33,9 @@ async def on_message(message):
 
     if message.content.startswith('$generate'):
         input_ids = tokenizer.encode(message.content[9:], return_tensors='tf')
-        tf.random.set_seed(randint(5))
+        x = randint(0,10)
+        print(x)
+        tf.random.set_seed(x)
         sample_outputs = model.generate(
             input_ids,
             do_sample=True,
