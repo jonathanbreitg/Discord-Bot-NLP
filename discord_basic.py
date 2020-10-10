@@ -39,7 +39,7 @@ async def on_message(message):
             max_length=50,
             top_k=50,
             top_p=0.95,
-            num_return_sequences=3
+            num_return_sequences=1
         )
         print("Output:\n" + 100 * '-')
         for i, sample_output in enumerate(sample_outputs):
