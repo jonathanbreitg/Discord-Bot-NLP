@@ -4,6 +4,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 import logging
 import os
 import tensorflow as tf
+from random import randint
 from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 model = TFGPT2LMHeadModel.from_pretrained("gpt2", pad_token_id=tokenizer.eos_token_id)
@@ -32,7 +33,7 @@ async def on_message(message):
 
     if message.content.startswith('$generate'):
         input_ids = tokenizer.encode(message.content[9:], return_tensors='tf')
-        tf.random.set_seed(0)
+        tf.random.set_seed(randint(5))
         sample_outputs = model.generate(
             input_ids,
             do_sample=True,
