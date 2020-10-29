@@ -7,8 +7,8 @@ from random import randint
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
-tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
 client = discord.Client()
 chat_history_ids = []
 
