@@ -23,23 +23,17 @@ async def on_message(message):
     if message.content.startswith('*'):
         to_send=chatbot_response_b(step=step,user=message.content)
         print(to_send)
-        await message.channel.send(to_send)
+        try:
+            await message.channel.send(to_send)
+        except:
+            await message.channel.send("no response...")
 
 
     if message.author == client.user:
         return
     if message.content.startswith('$'):
         if message.content == '$spam':
-            await message.channel.send('i dont like spamming')
-            await message.channel.send('but ok i guess')
-            await message.channel.send('labne')
-            await message.channel.send('no i should pick a better message')
-            await message.channel.send('everyone spams gay')
-            await message.channel.send('gay')
-            await message.channel.send('gay')
-            await message.channel.send('gay')
-            await message.channel.send('gay')
-            return
+            pass
         print(message.content)
 
 
